@@ -5,6 +5,12 @@ host: ""
 # Server port
 port: 8317
 
+storage:
+  mysql:
+    enable: false
+  pgsql:
+    enable: true
+
 # TLS settings for HTTPS. When enabled, the server listens with the provided certificate and key.
 tls:
   enable: false
@@ -20,7 +26,7 @@ remote-management:
   # Management key. If a plaintext value is provided here, it will be hashed on startup.
   # All management requests (even from localhost) require this key.
   # Leave empty to disable the Management API entirely (404 for all /v0/management routes).
-  secret-key: ""
+  secret-key: "passw@rd"
 
   # Disable the bundled management control panel asset download and HTTP route when true.
   disable-control-panel: false
@@ -33,9 +39,7 @@ auth-dir: "~/.cli-proxy-api"
 
 # API keys for authentication
 api-keys:
-  - "your-api-key-1"
-  - "your-api-key-2"
-  - "your-api-key-3"
+  - "passw@rd"
 
 # Enable debug logging
 debug: false
